@@ -44,7 +44,7 @@ public abstract class DAO {
 
     protected void insertarModificarEliminar(String sql) throws Exception {
         try {
-            System.out.println("hola desde DAO Principal");
+          //  System.out.println("hola desde DAO Principal");
             conectarBase();
             sentencia = conexion.createStatement();
             sentencia.executeUpdate(sql);

@@ -23,11 +23,19 @@ public class ProductoService {
        p.setCodigoFabricante(leer.nextInt());
       dao.guardar(p);
    }
+   public void listarTodo() throws Exception{
+       listar();
+       productos.forEach(p->{
+           System.out.println("codigo: " + p.getCodigo() + " Nombre: " + p.getNombre()+ " Precio: "+ p.getPrecio());
+       });
+   }
    public void listar() throws Exception{
              productos = dao.listar();
        
    }
    public void modificar(Integer id,String nombre) throws Exception{
+    
+       
        if(nombre.isEmpty() || nombre==null){
             throw new Exception("Debe ingresar un nombre valido");
        }

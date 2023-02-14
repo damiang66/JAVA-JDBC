@@ -16,7 +16,7 @@ public class Tienda {
         ProductoService productoService = new ProductoService();
         // productoService.crear();
         List<Producto> productos = new ArrayList<>();
-      //1  productos = productoService.listar();
+        //1  productos = productoService.listar();
         productoService.menu();
         int opcion = 0;
         while (opcion != 9) {
@@ -46,6 +46,8 @@ public class Tienda {
                     fabricanteService.crear();
                     break;
                 case 8:
+                    System.out.println("elija un Codigo de esta lista");
+                    productoService.listarTodo();
                     System.out.println("Ingrese el id del Producto a moficicar");
                     Integer id = leer.nextInt();
                     System.out.println("Ingrese el nombre que desea ingresar");
@@ -59,11 +61,11 @@ public class Tienda {
                     System.out.println("Ingreso una opcion no valida");
 
             }
-            if(!(opcion!=9)){
+            if (!(opcion != 9)) {
             } else {
                 productoService.menu();
             }
-           
+
         }
 
         // fabricanteService.crear();

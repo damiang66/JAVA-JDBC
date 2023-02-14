@@ -11,7 +11,7 @@ import tienda.entidades.Producto;
 
 public class ProductoDao extends DAO {
     public void guardar(Producto p) throws Exception{
-        System.out.println(p.getNombre() + "desde la clase dao");
+       // System.out.println(p.getNombre() + "desde la clase dao");
         try {
             if(p==null){
                 throw new Exception("Debe indicar un Producto");
@@ -19,7 +19,7 @@ public class ProductoDao extends DAO {
          String sql = "INSERT INTO producto (nombre, precio, codigo_fabricante) "
                     + "VALUES ( '" + p.getNombre() + "' , '" + p.getPrecio()+ "' ," + p.getCodigoFabricante() + " );";
           this.insertarModificarEliminar(sql);
-            System.out.println("guarde");
+       //     System.out.println("guarde");
         } catch (Exception e) {
            throw e;
           
@@ -46,7 +46,6 @@ public class ProductoDao extends DAO {
             desconectarBase();
             return productos;
         } catch (Exception e) {
-            e.printStackTrace();
             desconectarBase();
             throw new Exception("Error de sistema");
         }
